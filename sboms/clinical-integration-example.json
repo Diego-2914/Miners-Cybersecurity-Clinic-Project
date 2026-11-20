@@ -1,0 +1,215 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-18T00:00:00Z",
+    "component": {
+      "type": "application",
+      "name": "illustrative-clinical-integration-server",
+      "version": "0.0.0-example"
+    },
+    "properties": [
+      {
+        "name": "example:note",
+        "value": "CONSTRUCTED ILLUSTRATIVE SBOM. This is not a scan of real deployed software and no such product exists. The component list models the shape of a typical clinical integration stack (HL7/FHIR/DICOM on Java, with a small web UI) so the coverage tool can be demonstrated on an inventory that contains realistic gaps. Vulnerability results produced from this file by Grype are real lookups against real advisory data."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "hapi-fhir-base",
+      "version": "5.4.0",
+      "purl": "pkg:maven/ca.uhn.hapi.fhir/hapi-fhir-base@5.4.0"
+    },
+    {
+      "type": "library",
+      "name": "hapi-fhir-structures-r4",
+      "version": "5.4.0",
+      "purl": "pkg:maven/ca.uhn.hapi.fhir/hapi-fhir-structures-r4@5.4.0"
+    },
+    {
+      "type": "library",
+      "name": "hapi-base",
+      "version": "2.3",
+      "purl": "pkg:maven/ca.uhn.hapi/hapi-base@2.3"
+    },
+    {
+      "type": "library",
+      "name": "dcm4che-core",
+      "version": "5.24.1",
+      "purl": "pkg:maven/dcm4che/dcm4che-core@5.24.1"
+    },
+    {
+      "type": "library",
+      "name": "log4j-core",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1"
+    },
+    {
+      "type": "library",
+      "name": "log4j-api",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-api@2.14.1"
+    },
+    {
+      "type": "library",
+      "name": "jackson-databind",
+      "version": "2.9.10.1",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.10.1"
+    },
+    {
+      "type": "library",
+      "name": "commons-text",
+      "version": "1.9",
+      "purl": "pkg:maven/org.apache.commons/commons-text@1.9"
+    },
+    {
+      "type": "library",
+      "name": "spring-core",
+      "version": "5.2.9.RELEASE",
+      "purl": "pkg:maven/org.springframework/spring-core@5.2.9.RELEASE"
+    },
+    {
+      "type": "library",
+      "name": "spring-web",
+      "version": "5.2.9.RELEASE",
+      "purl": "pkg:maven/org.springframework/spring-web@5.2.9.RELEASE"
+    },
+    {
+      "type": "library",
+      "name": "guava",
+      "version": "24.1.1-jre",
+      "purl": "pkg:maven/com.google.guava/guava@24.1.1-jre"
+    },
+    {
+      "type": "library",
+      "name": "postgresql",
+      "version": "42.2.5",
+      "purl": "pkg:maven/org.postgresql/postgresql@42.2.5"
+    },
+    {
+      "type": "library",
+      "name": "bcprov-jdk15on",
+      "version": "1.64",
+      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.64"
+    },
+    {
+      "type": "library",
+      "name": "commons-io",
+      "version": "2.6",
+      "purl": "pkg:maven/commons-io/commons-io@2.6"
+    },
+    {
+      "type": "library",
+      "name": "snakeyaml",
+      "version": "1.27",
+      "purl": "pkg:maven/org.yaml/snakeyaml@1.27"
+    },
+    {
+      "type": "library",
+      "name": "jszip",
+      "version": "3.2.2",
+      "purl": "pkg:npm/jszip@3.2.2"
+    },
+    {
+      "type": "library",
+      "name": "lodash",
+      "version": "4.17.15",
+      "purl": "pkg:npm/lodash@4.17.15"
+    },
+    {
+      "type": "library",
+      "name": "axios",
+      "version": "0.21.0",
+      "purl": "pkg:npm/axios@0.21.0"
+    },
+    {
+      "type": "library",
+      "name": "moment",
+      "version": "2.24.0",
+      "purl": "pkg:npm/moment@2.24.0"
+    },
+    {
+      "type": "library",
+      "name": "@angular/core",
+      "version": "11.0.0",
+      "purl": "pkg:npm/%40angular/core@11.0.0"
+    },
+    {
+      "type": "library",
+      "name": "pyyaml",
+      "version": "5.3",
+      "purl": "pkg:pypi/pyyaml@5.3"
+    },
+    {
+      "type": "library",
+      "name": "requests",
+      "version": "2.22.0",
+      "purl": "pkg:pypi/requests@2.22.0"
+    },
+
+    {
+      "type": "library",
+      "name": "lab-analyzer-driver",
+      "version": "3.2"
+    },
+    {
+      "type": "library",
+      "name": "chart.js",
+      "purl": "pkg:npm/chart.js"
+    },
+    {
+      "type": "library",
+      "name": "legacy-hl7-adapter",
+      "version": "1.0",
+      "purl": "maven:org.example/legacy-hl7-adapter@1.0"
+    },
+
+    {
+      "type": "library",
+      "name": "openssl",
+      "version": "1.1.1n",
+      "purl": "pkg:deb/debian/openssl@1.1.1n"
+    },
+    {
+      "type": "library",
+      "name": "zlib1g",
+      "version": "1.2.11",
+      "purl": "pkg:deb/debian/zlib1g@1.2.11"
+    },
+    {
+      "type": "library",
+      "name": "libxml2",
+      "version": "2.9.10",
+      "purl": "pkg:deb/debian/libxml2@2.9.10"
+    },
+    {
+      "type": "library",
+      "name": "pacs-gateway-connector",
+      "version": "4.1",
+      "cpe": "cpe:2.3:a:vendor:pacs_gateway_connector:4.1:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "dicom-toolkit",
+      "version": "1.0",
+      "purl": "pkg:generic/dicom-toolkit@1.0"
+    },
+
+    {
+      "type": "file",
+      "name": "pom.xml"
+    },
+    {
+      "type": "file",
+      "name": "package-lock.json"
+    },
+    {
+      "type": "operating-system",
+      "name": "debian",
+      "version": "11"
+    }
+  ]
+}

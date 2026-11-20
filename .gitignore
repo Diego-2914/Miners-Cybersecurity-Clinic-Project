@@ -1,0 +1,16 @@
+# downloaded third-party source -- not this project's code
+openemr-download/
+openemr.zip
+
+# generated pipeline output -- regenerable from the scripts + an SBOM
+pipeline-out/
+pipeline-out-clinic/
+
+# python
+__pycache__/
+*.pyc
+
+# stray/leftover files from earlier experiments
+coverage.cs
+coverage.csvproton-bridge-v1.6.3.bom
+test_json

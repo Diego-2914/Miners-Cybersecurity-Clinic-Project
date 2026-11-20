@@ -1,0 +1,177 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "planted-v2-all-invented"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "examplelib",
+      "version": "2.1.0",
+      "purl": "pkg:npm/examplelib@2.1.0",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Lookup-ready|"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pyexample",
+      "version": "1.0",
+      "purl": "pkg:pypi/pyexample@1.0",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Lookup-ready|"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "noversion",
+      "purl": "pkg:npm/noversion",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Insufficient data|no version"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "withfield",
+      "version": "3.0",
+      "purl": "pkg:npm/withfield",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Lookup-ready|version taken"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "old-crypto",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Insufficient data|no identifier"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cpe-only",
+      "version": "1.0",
+      "cpe": "cpe:2.3:a:vendor:cpe-only:1.0:*:*:*:*:*:*:*",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Outside v0 scope|CPE only"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "debpkg",
+      "version": "7.88",
+      "purl": "pkg:deb/debian/debpkg@7.88",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Outside v0 scope|OS package"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mystery",
+      "version": "1",
+      "purl": "pkg:generic/mystery@1",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Outside v0 scope|purl type"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "scoped",
+      "version": "1.2.3",
+      "purl": "pkg:npm/%40scope/scoped@1.2.3",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Lookup-ready|"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "/etc/config.txt",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Excluded|not a software package"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "broken",
+      "version": "1.0",
+      "purl": "not-a-purl",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Insufficient data|purl could not be parsed"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "javalib",
+      "version": "1.0",
+      "purl": "pkg:maven/org.example/javalib@1.0",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Lookup-ready|"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "parentlib",
+      "version": "1.0",
+      "purl": "pkg:npm/parentlib@1.0",
+      "properties": [
+        {
+          "name": "planted:expected",
+          "value": "Lookup-ready|"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "nested-noversion",
+          "purl": "pkg:npm/nested-noversion",
+          "properties": [
+            {
+              "name": "planted:expected",
+              "value": "Insufficient data|no version"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
