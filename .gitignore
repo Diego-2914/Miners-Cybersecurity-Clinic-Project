@@ -14,3 +14,20 @@ __pycache__/
 coverage.cs
 coverage.csvproton-bridge-v1.6.3.bom
 test_json
+
+# superseded / generated -- kept locally, not tracked
+combined-report.csv
+combined-report.txt
+combined-report.xlsx
+coverage.csv
+grype-results.json
+sbom.json
+openemr-combined-report.csv.xlsx
+proton-bridge-v1.6.3.bom.json
+sbom-dashboard.BACKUP-*.html
+test_json.pdf
+test_json.txt
+combine_reports.py
+combine_reports_openemr.py
+make_dashboard.py
+sbom_project_presentation.pptx
