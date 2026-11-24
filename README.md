@@ -29,6 +29,19 @@ python run_pipeline.py --sbom path/to/sbom.json --outdir pipeline-out
 python build_dashboard.py --outdir pipeline-out --title "My software" --out dashboard.html
 ```
 
+## Tests
+
+Automated tests cover input validation, component classification, the purl
+join, the full pipeline, and dashboard generation:
+
+```
+python -m unittest test_pipeline -v
+```
+
+They use only the standard library and do not require Grype — they feed the
+pipeline a known Grype result, so the suite runs in a second or two anywhere
+Python does. A live Grype scan on real software is the one check done by hand.
+
 ## How it works
 
 1. **Grype** scans the SBOM against its vulnerability database.
