@@ -22,6 +22,7 @@ PipelineError into a process exit.
 import argparse
 import csv
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -85,16 +86,30 @@ def run_grype(sbom_path, out_json):
     # Capture raw bytes, not text. Grype emits UTF-8 JSON; letting Python
     # decode it through the console code page (cp1252 on Windows) throws
     # UnicodeDecodeError on bytes that code page has no character for.
+    #
+    # Turn OFF Grype's per-run database auto-update: that download can take
+    # far longer than the scan itself and would hang a web request waiting
+    # on the network. The vulnerability database is refreshed deliberately
+    # with `grype db update` (see the README), and its build date is recorded
+    # in each report's provenance. A scan uses whatever database is already
+    # present, so scans are fast and predictable.
+    env = dict(os.environ)
+    env.setdefault("GRYPE_DB_AUTO_UPDATE", "false")
     try:
         proc = subprocess.run([exe, "sbom:" + str(sbom_path), "-o", "json"],
-                              capture_output=True, timeout=120)
+                              capture_output=True, timeout=180, env=env)
     except subprocess.TimeoutExpired:
-        raise PipelineError("Grype did not finish within 2 minutes. "
-                            "The SBOM may be unusually large.")
+        raise PipelineError(
+            "Grype did not finish within 3 minutes. If this is the first scan "
+            "in a while, its vulnerability database may need refreshing -- run "
+            "`grype db update` once in a terminal, then try again.")
     if proc.returncode != 0:
         detail = (proc.stderr or b"").decode("utf-8", "replace").strip()
-        raise PipelineError("Grype failed (exit %d).%s"
-                            % (proc.returncode, (" " + detail) if detail else ""))
+        hint = ""
+        if "database" in detail.lower() or "no db" in detail.lower():
+            hint = "  (Try running `grype db update` once in a terminal.)"
+        raise PipelineError("Grype failed (exit %d).%s%s"
+                            % (proc.returncode, (" " + detail) if detail else "", hint))
     data = proc.stdout or b""
     if not data.strip():
         raise PipelineError("Grype ran but produced no output.")

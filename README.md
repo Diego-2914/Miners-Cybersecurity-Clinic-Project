@@ -20,7 +20,15 @@ python server.py
 
 Then open **http://127.0.0.1:8000** and upload a CycloneDX JSON SBOM. The page runs the full pipeline (Grype → coverage classification → combine) and shows the result as a dashboard. Nothing you upload is kept — each upload runs in its own temporary folder, deleted once the result is shown.
 
-Requires [Grype](https://github.com/anchore/grype) installed and on your PATH. No other dependencies — everything here is Python's standard library.
+Requires [Grype](https://github.com/anchore/grype) installed and on your PATH.
+
+Before your first scan — and whenever you want fresher results — update Grype's vulnerability database once:
+
+```
+grype db update
+```
+
+Scans use whatever database is already on the machine and do not download one mid-scan, so a scan stays fast and the database's date is recorded in the report. No other dependencies — everything here is Python's standard library.
 
 ## Run it from the command line
 
